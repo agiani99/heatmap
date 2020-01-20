@@ -7,7 +7,7 @@ df.coldata <-read.csv2("Y:/R/coldata.csv", row.names = 1)
 Tanks <- levels(df.coldata$Tank)
 Conditions <- levels(df.coldata$Condition)
 
-ann_colors = list(
+ann_colors <- list(
   Condition = c(Control="lightskyblue",
                 LowExposure="royalblue1",
                 HighExposure="navyblue"),
@@ -19,7 +19,7 @@ ann_colors = list(
 
 # Hence need to manually specify the factors for the colors. Tidious especially 
 # as the tank number changes with the different experiments.
-ann_colors = list(
+ann_colors <- list(
   Condition = c(Control="lightskyblue",
                 LowExposure="royalblue1",
                 HighExposure="navyblue"),
