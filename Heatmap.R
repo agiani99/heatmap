@@ -7,26 +7,23 @@ df.coldata <-read.csv2("Y:/R/coldata.csv", row.names = 1)
 Tanks <- levels(df.coldata$Tank)
 Conditions <- levels(df.coldata$Condition)
 
-ann_colors <- list(
-  Condition = c(Control="lightskyblue",
+#here the correction
+ann_colors <- list(list(Condition = c(Control="lightskyblue",
                 LowExposure="royalblue1",
-                HighExposure="navyblue"),
-  ## This doenst work ... BUGS here:
-  Tank = c(Tanks[1]="gray90",
-           Tanks[2]="gray65",
-           Tanks[3]="gray40")
-)
+                HighExposure="navyblue")),
+                list(Tank = c("gray90", "gray65","gray40")))
+
 
 # Hence need to manually specify the factors for the colors. Tidious especially 
 # as the tank number changes with the different experiments.
-ann_colors <- list(
-  Condition = c(Control="lightskyblue",
-                LowExposure="royalblue1",
-                HighExposure="navyblue"),
-  Tank = c(T14_3="gray90",
-           T6="gray65",
-           T8="gray40")
-)
+#ann_colors <- list(
+#  Condition = c(Control="lightskyblue",
+#                LowExposure="royalblue1",
+#                HighExposure="navyblue"),
+#  Tank = c(T14_3="gray90",
+#           T6="gray65",
+#           T8="gray40")
+#)
 
 # Zscore normalized rows
 pheatmap(mydata,
